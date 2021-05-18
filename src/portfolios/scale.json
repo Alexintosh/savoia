@@ -1,0 +1,4 @@
+[
+    {"name":"LRC","coingeckoId":"loopring","sentimentScore":1, "RATIO": 0.5},
+    {"name":"ZKS","coingeckoId":"zkswap","sentimentScore":1, "RATIO": 0.5}
+]
