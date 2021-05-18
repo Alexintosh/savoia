@@ -8,7 +8,7 @@
         let c = false;
 
         Chart.helpers.each(Chart.instances, function(instance) {
-            if (instance.chart.canvas.id == 'chart') {
+            if (instance.chart.canvas.id == `chart-${name}`) {
                 c = instance;
             }
         });
@@ -17,7 +17,7 @@
             c.destroy();
         }
 
-        let ctx = document.getElementById('chart').getContext('2d');
+        let ctx = document.getElementById(`chart-${name}`).getContext('2d');
 
         let chart = new Chart(ctx, {
             type: "line",
@@ -75,7 +75,7 @@
 
 <div class="rounded shadow-xl overflow-hidden w-full md:flex" style="max-width:900px">
     <div class="flex w-full md:w-1/2 px-5 pb-4 pt-8 bg-indigo-500 text-white items-center">
-        <canvas id="chart" class="w-full"></canvas>
+        <canvas id={`chart-${name}`} class="w-full"></canvas>
     </div>
     <div class="flex w-full md:w-1/2 p-10 bg-gray-100 text-gray-600 items-center">
         <div class="w-full">
