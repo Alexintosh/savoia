@@ -10,8 +10,13 @@
             const p = portfolios[i];
             p.model = new IndexCalculator(p.name);
             await p.model.pullData(false, p.json);
-            p.model.compute();
+            p.model.computeAll({
+                adjustedWeight: true,
+                sentimentWeight: true,
+                computeWeights: true
+            });
             console.log('idx', p);
+            console.log('idx', JSON.stringify(p));
             p.ready = true;
         }
         isLoading = false;

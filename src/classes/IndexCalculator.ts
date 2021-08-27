@@ -56,14 +56,15 @@ export class IndexCalculator {
     public nav: Array<any>;
     underlyingAmounts: any[];
 
-    constructor(name, maxweight="1") {
+    constructor(name, maxweight="1", sentimentWeight="0.0") {
         this.dataSet = [];
         this.maxWeight = parseFloat(maxweight);
         this.name = name;
         this.performance = [];
         this.indexStartingNAV = 1000;
-        this.sentimentWeightInfluence = 0.2;
+        this.sentimentWeightInfluence = parseFloat(sentimentWeight);
         this.marketWeightInfluence = 1 - this.sentimentWeightInfluence;
+        console.log('marketWeightInfluence', this.marketWeightInfluence)
     }
 
     async fetchCoinData(id) {
@@ -121,6 +122,7 @@ export class IndexCalculator {
 
     computeWeights() {
         this.dataSet.forEach(el => {
+            if(el.RATIO) throw new Error("Ratio already present");
             //Readeble: el.RATIO = el.AVG_MCAP / this.cumulativeUnderlyingMCAP;
             el.originalRATIO =( (new BigNumber(el.AVG_MCAP)).dividedBy( new BigNumber(this.cumulativeUnderlyingMCAP)) ).toNumber();
             el.RATIO = el.originalRATIO;
@@ -361,6 +363,8 @@ export class IndexCalculator {
             for (let k = 0; k < this.dataSet.length; k++) {
                 const coin = this.dataSet[k];
 
+                console.log('coin.RATIO', coin.RATIO);
+                console.log('coin.initialAmounts * coin.data.prices[i][1];', coin.initialAmounts, coin.data.prices[i][1]);
                 if(coin.data.prices[i][1])
                     tempNav += coin.initialAmounts * coin.data.prices[i][1];
 
@@ -377,10 +381,12 @@ export class IndexCalculator {
         this.SHARPERATIO = _.last(this.performance)[1] / this.STDEV;
     }
 
-    computeAll({ adjustedWeight }) {
+    computeAll({ adjustedWeight, sentimentWeight, computeWeights }) {
         this.computeMCAP();
-        this.computeWeights();
+        if(computeWeights) this.computeWeights();
+        this.computeInitialTokenAmounts();
         if(adjustedWeight) this.computeAdjustedWeights();
+        if(sentimentWeight) this.computeSentimentWeight();
         this.computeBacktesting();
         this.computeCorrelation();
         this.computeCovariance();

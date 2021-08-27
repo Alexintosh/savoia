@@ -1,0 +1,10 @@
+[
+    {"name":"LINK","coingeckoId":"chainlink","sentimentScore":54},
+    {"name":"COMP","coingeckoId":"compound-governance-token","sentimentScore":44},
+    {"name":"MKR","coingeckoId":"maker","sentimentScore":46},
+    {"name":"SNX","coingeckoId":"havven","sentimentScore":58},
+    {"name":"UNI","coingeckoId":"uniswap","sentimentScore":60},
+    {"name":"SUSHI","coingeckoId":"sushi","sentimentScore":61},
+    {"name":"AAVE","coingeckoId":"aave","sentimentScore":66},
+    {"name":"YFI","coingeckoId":"yearn-finance","sentimentScore":71}
+]
