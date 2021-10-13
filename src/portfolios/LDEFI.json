@@ -1,16 +1,16 @@
 [
     {"name":"LINK","coingeckoId":"chainlink","RATIO":0.12845},
-    {"name":"COMP","coingeckoId":"compound-governance-token","RATIO":0.06545},
-    {"name":"MKR","coingeckoId":"maker","RATIO":0.07987},
-    {"name":"SNX","coingeckoId":"havven","RATIO":0.05838},
+    {"name":"COMP","coingeckoId":"compound-governance-token","RATIO":0.063},
+    {"name":"MKR","coingeckoId":"maker","RATIO":0.07371},
+    {"name":"SNX","coingeckoId":"havven","RATIO":0.06349},
     {"name":"UNI","coingeckoId":"uniswap","RATIO":0.13027},
-    {"name":"SUSHI","coingeckoId":"sushi","RATIO":0.06454},
-    {"name":"AAVE","coingeckoId":"aave","RATIO":0.1239},
-    {"name":"YFI","coingeckoId":"yearn-finance","RATIO":0.04914},
-    {"name":"UMA","coingeckoId":"uma","RATIO":0.09},
-    {"name":"REN","coingeckoId":"republic-protocol","RATIO":0.07197193713},
-    {"name":"LRC","coingeckoId":"loopring","RATIO":0.06636673746},
-    {"name":"BAL","coingeckoId":"balancer", "RATIO":0.04438454493},
-    {"name":"PNT","coingeckoId":"pnetwork","RATIO":0.00516735513},
-    {"name":"MLN","coingeckoId":"melon","RATIO":0.02210942532}
-]
+    {"name":"SUSHI","coingeckoId":"sushi","RATIO":0.06965},
+    {"name":"AAVE","coingeckoId":"aave","RATIO":0.12215},
+    {"name":"YFI","coingeckoId":"yearn-finance","RATIO":0.04928},
+    {"name":"UMA","coingeckoId":"uma","RATIO":0.08427},
+    {"name":"REN","coingeckoId":"republic-protocol","RATIO":0.08907},
+    {"name":"LRC","coingeckoId":"loopring","RATIO":0.06777},
+    {"name":"BAL","coingeckoId":"balancer", "RATIO":0.03348},
+    {"name":"PNT","coingeckoId":"pnetwork","RATIO":0.00432},
+    {"name":"MLN","coingeckoId":"melon","RATIO":0.02109}
+    ]

@@ -11,9 +11,9 @@
             p.model = new IndexCalculator(p.name);
             await p.model.pullData(false, p.json);
             p.model.computeAll({
-                adjustedWeight: true,
-                sentimentWeight: true,
-                computeWeights: true
+                adjustedWeight: false,
+                sentimentWeight: false,
+                computeWeights: false
             });
             console.log('idx', p);
             console.log('idx', JSON.stringify(p));
